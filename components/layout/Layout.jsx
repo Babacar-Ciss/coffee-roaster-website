@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import Head from "next/head";
 import Header from "./Header";
+import Menu from "../Menu";
 
 
 const LayoutStyle = styled.div`
+    position: relative;
     width: 100%;
     height: 100vh;
     background-color: var(--bg-color);
@@ -25,7 +27,7 @@ const Layout = ({children}) => {
                     <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Fraunces:opsz,wght@9..144,400;9..144,900&display=swap" rel="stylesheet" /> 
             </Head>
             <Header />
-            
+            <Menu />
             {children}
         </LayoutStyle>
     );
