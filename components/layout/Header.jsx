@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <HeaderStyle>
             <Link href="/"><Image src="/assets/shared/desktop/logo.svg" alt="roasted coffee logo" width="163" height="18"/></Link>     
-            <Image style={{cursor : "pointer"}}    src="/assets/shared/mobile/icon-hamburger.svg" alt="roasted coffee logo" width="16" height="15"/>
+            <Image style={{cursor : "pointer"}} src="/assets/shared/mobile/icon-hamburger.svg" alt="roasted coffee logo" width="16" height="15"/>
         </HeaderStyle>
     );
 }
