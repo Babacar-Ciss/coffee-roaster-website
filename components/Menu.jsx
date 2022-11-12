@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Link from 'next/link'
+import useStore from '../store'
 
 const MenuStyle = styled.div`
   position: fixed;
@@ -37,14 +38,18 @@ const LinksContainer = styled.div`
 `
 
 const Menu = () => {
+  const isHamburgerClicked = useStore((state) => state.isHamburgerClicked)
+
   return (
-    <MenuStyle>
-      <LinksContainer>
-        <Link href="/">Home</Link>
-        <Link href="/About_Us">About Us</Link>
-        <Link href="/Create_Your_Plan">Create Your Plan</Link>
-      </LinksContainer>
-    </MenuStyle>
+    isHamburgerClicked && (
+      <MenuStyle>
+        <LinksContainer>
+          <Link href="/">Home</Link>
+          <Link href="/About Us">About Us</Link>
+          <Link href="/Create Your Plan">Create Your Plan</Link>
+        </LinksContainer>
+      </MenuStyle>
+    )
   )
 }
 
