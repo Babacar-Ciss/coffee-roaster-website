@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Image from 'next/image'
 import Link from 'next/link'
+import useStore from '../../store'
 
 const HeaderStyle = styled.div`
   display: flex;
@@ -8,6 +9,10 @@ const HeaderStyle = styled.div`
 `
 
 const Header = () => {
+  const ToggleHamburgerClicked = useStore(
+    (state) => state.ToggleHamburgerClicked,
+  )
+
   return (
     <HeaderStyle>
       <Link href="/">
@@ -19,6 +24,7 @@ const Header = () => {
         />
       </Link>
       <Image
+        onClick={ToggleHamburgerClicked}
         style={{ cursor: 'pointer' }}
         src="/assets/shared/mobile/icon-hamburger.svg"
         alt="roasted coffee logo"
