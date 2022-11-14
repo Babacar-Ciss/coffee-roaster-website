@@ -6,6 +6,13 @@ import Image from 'next/image'
 const FooterStyle = styled.div`
   background-color: var(--bg-color-footer);
   padding: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    padding: 54px 190px 54px 215px;
+  }
 `
 
 const LinksContainer = styled.div`
@@ -13,6 +20,12 @@ const LinksContainer = styled.div`
   flex-direction: column;
   padding-top: 48px;
   margin-bottom: 48px;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    flex-direction: row;
+    padding-top: 32px;
+    margin-bottom: 65px;
+  }
 
   & a {
     color: var(--grey);
@@ -25,10 +38,19 @@ const LinksContainer = styled.div`
     text-decoration: none;
     margin-bottom: 32px;
     text-align: center;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      margin-bottom: 0;
+      margin-right: 33px;
+    }
   }
 
   & a:last-child {
     margin-bottom: 0;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      margin-right: 0;
+    }
   }
 `
 

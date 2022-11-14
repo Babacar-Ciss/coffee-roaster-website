@@ -9,8 +9,11 @@ const LayoutStyle = styled.div`
   width: 100%;
   height: 100vh;
   background-color: var(--bg-color);
-  padding-inline: 24px;
-  padding-top: 32px;
+  padding: 32px 24px 72px 24px;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    padding: 40px 39px 72px 39px;
+  }
 `
 
 const Layout = ({ children }) => {
