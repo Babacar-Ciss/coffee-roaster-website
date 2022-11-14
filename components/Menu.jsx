@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Link from 'next/link'
 import useStore from '../store'
+import LinksMenu from './LinksMenu'
 
 const MenuStyle = styled.div`
   position: fixed;
@@ -44,9 +45,7 @@ const Menu = () => {
     isHamburgerClicked && (
       <MenuStyle>
         <LinksContainer>
-          <Link href="/">Home</Link>
-          <Link href="/About Us">About Us</Link>
-          <Link href="/Create Your Plan">Create Your Plan</Link>
+          <LinksMenu />
         </LinksContainer>
       </MenuStyle>
     )
