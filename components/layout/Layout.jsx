@@ -14,6 +14,10 @@ const LayoutStyle = styled.div`
   @media (min-width: 768px) and (max-width: 1439px) {
     padding: 40px 39px 72px 39px;
   }
+
+  @media (min-width: 1440px) {
+    padding: 43px 80px 88px 80px;
+  }
 `
 
 const Layout = ({ children }) => {

@@ -13,6 +13,13 @@ const FooterStyle = styled.div`
   @media (min-width: 768px) and (max-width: 1439px) {
     padding: 54px 190px 54px 215px;
   }
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 47px 85px 47px 85px;
+  }
 `
 
 const LinksContainer = styled.div`
@@ -25,6 +32,14 @@ const LinksContainer = styled.div`
     flex-direction: row;
     padding-top: 32px;
     margin-bottom: 65px;
+  }
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    padding-top: 0;
+    align-items: center;
+    margin-bottom: 0;
+    margin-left: 102px;
   }
 
   & a {
@@ -43,12 +58,21 @@ const LinksContainer = styled.div`
       margin-bottom: 0;
       margin-right: 33px;
     }
+
+    @media (min-width: 1440px) {
+      margin-bottom: 0;
+      margin-right: 33px;
+    }
   }
 
   & a:last-child {
     margin-bottom: 0;
 
     @media (min-width: 768px) and (max-width: 1439px) {
+      margin-right: 0;
+    }
+
+    @media (min-width: 1440px) {
       margin-right: 0;
     }
   }
@@ -61,6 +85,11 @@ const SocialsMediaContainer = styled.div`
 
   & a:not(:last-child) {
     margin-right: 24px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-right: 0;
+    margin-left: auto;
   }
 `
 

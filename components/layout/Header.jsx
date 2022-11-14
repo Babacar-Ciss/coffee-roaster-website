@@ -12,6 +12,10 @@ const HeaderStyle = styled.div`
     @media (min-width: 768px) and (max-width: 1439px) {
       display: none;
     }
+
+    @media (min-width: 1440px) {
+      display: none;
+    }
   }
 `
 
@@ -22,6 +26,12 @@ const LinksContainer = styled.div`
   margin-bottom: 48px;
 
   @media (min-width: 768px) and (max-width: 1439px) {
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+  }
+
+  @media (min-width: 1440px) {
     flex-direction: row;
     padding: 0;
     margin: 0;
@@ -40,6 +50,10 @@ const LinksContainer = styled.div`
     text-align: center;
 
     @media (min-width: 768px) and (max-width: 1439px) {
+      margin-right: 33px;
+    }
+
+    @media (min-width: 1440px) {
       margin-right: 33px;
     }
   }
