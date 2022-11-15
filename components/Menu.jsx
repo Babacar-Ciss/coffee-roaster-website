@@ -12,7 +12,7 @@ const MenuStyle = styled.div`
   background: linear-gradient(
     180deg,
     rgba(254, 252, 247, 0.504981) 0%,
-    var(--bg-color) 60%
+    var(--light-cream) 60%
   );
 
   transform: matrix(1, 0, 0, -1, 0, 0);

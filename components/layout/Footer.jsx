@@ -4,11 +4,15 @@ import LinksMenu from '../LinksMenu'
 import Image from 'next/image'
 
 const FooterStyle = styled.div`
+  z-index: 1;
   background-color: var(--bg-color-footer);
   padding: 54px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 87%;
+  margin: 0 auto;
+  margin-bottom: 72px;
 
   @media (min-width: 768px) and (max-width: 1439px) {
     padding: 54px 190px 54px 215px;
@@ -115,9 +119,11 @@ const Footer = () => {
           </g>
         </svg>
       </Link>
+
       <LinksContainer>
         <LinksMenu />
       </LinksContainer>
+
       <SocialsMediaContainer>
         <Link href="#">
           <Image

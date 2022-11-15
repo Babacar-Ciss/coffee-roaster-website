@@ -7,6 +7,7 @@ import LinksMenu from '../LinksMenu'
 const HeaderStyle = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-inline: 24px;
 
   & img[alt='roasted coffee hamburger menu'] {
     @media (min-width: 768px) and (max-width: 1439px) {
@@ -24,14 +25,17 @@ const LinksContainer = styled.div`
   flex-direction: column;
   padding-top: 48px;
   margin-bottom: 48px;
+  display: none;
 
   @media (min-width: 768px) and (max-width: 1439px) {
+    display: block;
     flex-direction: row;
     padding: 0;
     margin: 0;
   }
 
   @media (min-width: 1440px) {
+    display: block;
     flex-direction: row;
     padding: 0;
     margin: 0;
