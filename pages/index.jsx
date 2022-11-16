@@ -401,8 +401,8 @@ export default function Home() {
         </WhyChooseUsContainer>
 
         <ChoicesWrapper>
-          {ChoiceReasons.map((item) => (
-            <Choice {...item} />
+          {ChoiceReasons.map((item, index) => (
+            <Choice {...item} key={index} />
           ))}
         </ChoicesWrapper>
       </ChoicesContainer>
