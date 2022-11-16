@@ -17,6 +17,10 @@ const CreateYourPlanCTAStyle = styled.div`
     text-align: center;
     color: #fefcf7;
   }
+
+  @media (min-width: 1440px) {
+    flex-basis: 100%;
+  }
 `
 
 const CreateYourPlanCTA = () => {

@@ -5,16 +5,42 @@ import useStore from '../../store'
 import LinksMenu from '../LinksMenu'
 
 const HeaderStyle = styled.div`
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-inline: 24px;
+  padding-top: 32px;
+  padding-bottom: 10px;
+  margin-bottom: 48px;
+  background-color: var(--light-cream);
   display: flex;
   justify-content: space-between;
-  padding-inline: 24px;
 
+  @media (min-width: 768px) {
+    padding-inline: 39px;
+    position: absolute;
+  }
+
+  @media (min-width: 1440px) {
+    padding-inline: 80px;
+    position: absolute;
+  }
+
+  & img[alt='roasted coffee logo mobile'],
   & img[alt='roasted coffee hamburger menu'] {
-    @media (min-width: 768px) and (max-width: 1439px) {
+    @media (min-width: 768px) {
       display: none;
     }
+  }
 
-    @media (min-width: 1440px) {
+  & img[alt='roasted coffee logo tablet and desktop'] {
+    @media (min-width: 768px) {
+      display: block;
+    }
+
+    @media (max-width: 767px) {
       display: none;
     }
   }
@@ -77,9 +103,15 @@ const Header = () => {
       <Link href="/">
         <Image
           src="/assets/shared/desktop/logo.svg"
-          alt="roasted coffee logo"
+          alt="roasted coffee logo mobile"
           width="163"
           height="18"
+        />
+        <Image
+          src="/assets/shared/desktop/logo.svg"
+          alt="roasted coffee logo tablet and desktop"
+          width="236"
+          height="26"
         />
       </Link>
       <Image

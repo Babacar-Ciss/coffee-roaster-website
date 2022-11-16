@@ -3,14 +3,13 @@ import Link from 'next/link'
 import LinksMenu from '../LinksMenu'
 import Image from 'next/image'
 
-const FooterStyle = styled.div`
+const FooterStyle = styled.footer`
   z-index: 1;
   background-color: var(--bg-color-footer);
   padding: 54px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 87%;
   margin: 0 auto;
   margin-bottom: 72px;
 
@@ -21,7 +20,6 @@ const FooterStyle = styled.div`
   @media (min-width: 1440px) {
     flex-direction: row;
     align-items: center;
-    /* justify-content: space-between; */
     padding: 47px 85px 47px 85px;
   }
 `

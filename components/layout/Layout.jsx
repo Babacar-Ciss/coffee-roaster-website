@@ -8,7 +8,7 @@ const LayoutStyle = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
-  padding: 32px 0px 72px 0px;
+  padding: 32px 24px 72px 24px;
 
   @media (min-width: 768px) and (max-width: 1439px) {
     padding: 40px 39px 72px 39px;

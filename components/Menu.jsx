@@ -1,18 +1,18 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 import useStore from '../store'
 import LinksMenu from './LinksMenu'
 
 const MenuStyle = styled.div`
+  z-index: 1000;
   position: fixed;
-  top: 90px;
+  top: 50px;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   background: linear-gradient(
     180deg,
     rgba(254, 252, 247, 0.504981) 0%,
-    var(--light-cream) 60%
+    var(--light-cream) 70%
   );
 
   transform: matrix(1, 0, 0, -1, 0, 0);

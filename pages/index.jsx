@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Image from 'next/image'
 import CreateYourPlanCTA from '../components/utils/CreateYourPlanCTA'
 import Coffee from '../components/Coffee'
 import Choice from '../components/Choice'
@@ -82,10 +81,15 @@ const HowItWorksItems = [
 ]
 
 const HomeStyle = styled.div`
-  width: 100%;
-  background-color: var(--light-cream);
-  padding-inline: 24px;
   padding-top: 40px;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    padding-top: 53px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 43px;
+  }
 `
 
 const HeroContainer = styled.section`
@@ -101,6 +105,23 @@ const HeroContainer = styled.section`
   flex-direction: column;
   align-items: center;
   margin-bottom: 120px;
+  text-align: center;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    background-image: url('/assets/home/tablet/image-hero-coffeepress.jpg');
+    align-items: flex-start;
+    padding-left: 58px;
+    margin-bottom: 144px;
+  }
+
+  @media (min-width: 1440px) {
+    height: 600px;
+    background-image: url('/assets/home/desktop/image-hero-coffeepress.jpg');
+    align-items: flex-start;
+    padding-left: 58px;
+    margin-bottom: 136px;
+    padding-top: 117px;
+  }
 
   & h1 {
     font-family: 'Fraunces';
@@ -110,17 +131,45 @@ const HeroContainer = styled.section`
     text-align: center;
     color: #fefcf7;
     margin-bottom: 24px;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      font-size: 48px;
+      line-height: 48px;
+      padding-right: 250px;
+      text-align: left;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 72px;
+      line-height: 72px;
+      padding-right: 55%;
+      text-align: left;
+      margin-bottom: 32px;
+    }
   }
 
   & p {
     font-family: 'Barlow';
     font-size: 15px;
     line-height: 25px;
-    text-align: center;
     color: #fefcf7;
     opacity: 0.8;
     padding-inline: 10px;
     margin-bottom: 39px;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      padding-right: 200px;
+      padding-left: 0;
+      text-align: left;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 16px;
+      line-height: 26px;
+      padding-right: 65%;
+      text-align: left;
+      margin-bottom: 56px;
+    }
   }
 `
 
@@ -130,6 +179,20 @@ const CollectionContainer = styled.section`
   grid-template-rows: 72px repeat(4, auto);
   row-gap: 48px;
   margin-bottom: 120px;
+  text-align: center;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    grid-template-rows: 118px repeat(4, auto);
+    text-align: left;
+    row-gap: 32px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 196px auto;
+    row-gap: 0;
+    margin-bottom: 200px;
+  }
 `
 
 const OurCollectionIMGContainer = styled.div`
@@ -137,6 +200,22 @@ const OurCollectionIMGContainer = styled.div`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    background: url('/assets/home/tablet/our-collection-tablet.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: 1440px) {
+    background: url('/assets/home/desktop/our-collection-desktop.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+  }
 `
 
 const ChoicesContainer = styled.section`
@@ -145,7 +224,19 @@ const ChoicesContainer = styled.section`
   grid-template-rows: auto 36px 625px;
   background-color: var(--bg-color-footer);
   border-radius: 10px;
-  margin-bottom: 717px;
+  margin-bottom: 592px;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    grid-template-rows: 573px;
+    background-color: transparent;
+    margin-bottom: 420px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-rows: 573px;
+    background-color: transparent;
+    margin-bottom: 220px;
+  }
 `
 
 const WhyChooseUsContainer = styled.div`
@@ -154,11 +245,22 @@ const WhyChooseUsContainer = styled.div`
   background-color: var(--dark-grey-blue);
   padding-top: 64px;
   padding-inline: 24px;
-  grid-column: 1/4;
+  grid-column: 1 / 4;
   grid-row: 1 / 2;
   padding-bottom: 28px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    padding-top: 56px;
+    border-radius: 10px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-template-rows: 577px auto;
+    border-radius: 10px;
+    padding-top: 100px;
+  }
 
   & h2 {
     font-family: 'Fraunces';
@@ -167,6 +269,16 @@ const WhyChooseUsContainer = styled.div`
     text-align: center;
     color: var(--light-cream);
     margin-bottom: 24px;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 40px;
+      line-height: 48px;
+    }
   }
 
   & p {
@@ -176,12 +288,34 @@ const WhyChooseUsContainer = styled.div`
     text-align: center;
     color: var(--light-cream);
     opacity: 0.8;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      padding-inline: 74px;
+    }
+
+    @media (min-width: 1440px) {
+      font-size: 16px;
+      line-height: 26px;
+      padding-inline: 350px;
+    }
   }
 `
 
 const ChoicesWrapper = styled.div`
   grid-column: 2 / 3;
   grid-row: 3 / 4;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    grid-row: 1 / 2;
+    margin-top: 260px;
+  }
+
+  @media (min-width: 1440px) {
+    grid-row: 2 / 3;
+    justify-content: space-between;
+    margin-top: -236px;
+    display: flex;
+  }
 `
 
 const HowItWorksContainer = styled.div`
@@ -190,8 +324,26 @@ const HowItWorksContainer = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media (min-width: 768px) and (max-width: 1439px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
   &:last-child {
     padding-bottom: 79px;
+
+    @media (min-width: 1440px) {
+      padding-bottom: 200px;
+    }
   }
 
   & h2:first-child {
@@ -199,6 +351,16 @@ const HowItWorksContainer = styled.div`
     line-height: 32px;
     color: #83888f;
     margin-bottom: 80px;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      flex-basis: 100%;
+      margin-bottom: 40px;
+    }
+
+    @media (min-width: 1440px) {
+      flex-basis: 100%;
+      margin-bottom: 40px;
+    }
   }
 `
 
@@ -247,8 +409,8 @@ export default function Home() {
 
       <HowItWorksContainer>
         <h2>How it works</h2>
-        {HowItWorksItems.map((item) => (
-          <HowItWorks {...item} />
+        {HowItWorksItems.map((item, index) => (
+          <HowItWorks {...item} index={index} />
         ))}
         <CreateYourPlanCTA />
       </HowItWorksContainer>
