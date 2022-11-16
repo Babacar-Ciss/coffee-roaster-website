@@ -410,7 +410,7 @@ export default function Home() {
       <HowItWorksContainer>
         <h2>How it works</h2>
         {HowItWorksItems.map((item, index) => (
-          <HowItWorks {...item} index={index} />
+          <HowItWorks {...item} key={index} />
         ))}
         <CreateYourPlanCTA />
       </HowItWorksContainer>
