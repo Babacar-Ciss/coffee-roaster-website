@@ -16,6 +16,12 @@ const HeadquarterStyle = styled.div`
     justify-content: space-between;
     margin-bottom: 0;
   }
+
+  @media (min-width: 1440px) {
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
 `
 
 const Wrapper = styled.div`
@@ -30,6 +36,9 @@ const Wrapper = styled.div`
     text-align: left;
   }
 
+  @media (min-width: 1440px) {
+    text-align: left;
+  }
   p {
     font-family: 'Barlow';
   }

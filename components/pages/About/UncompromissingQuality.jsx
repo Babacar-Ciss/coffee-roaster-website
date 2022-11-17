@@ -9,6 +9,11 @@ const UncompromissingQualityStyle = styled.section`
   @media (min-width: 768px) and (max-width: 1439px) {
     grid-template-rows: repeat(2, 160px) auto;
   }
+
+  @media (min-width: 1440px) {
+    grid-template-columns: 1fr 474px 6.7%;
+    grid-template-rows: 474px;
+  }
 `
 
 const TextContainer = styled.div`
@@ -32,12 +37,11 @@ const TextContainer = styled.div`
   }
 
   @media (min-width: 1440px) {
-    height: 600px;
-    background-image: url('/assets/home/desktop/image-hero-coffeepress.jpg');
-    align-items: flex-start;
-    padding-left: 58px;
-    margin-bottom: 136px;
-    padding-top: 117px;
+    padding-top: 88px;
+    padding-bottom: 176px;
+    padding-left: 85px;
+
+    grid-row: 1 / 2;
   }
 
   & h2 {
@@ -54,11 +58,11 @@ const TextContainer = styled.div`
     }
 
     @media (min-width: 1440px) {
-      font-size: 72px;
-      line-height: 72px;
-      padding-right: 55%;
+      font-size: 40px;
+      line-height: 48px;
       text-align: left;
       margin-bottom: 32px;
+      align-self: flex-start;
     }
   }
 
@@ -76,7 +80,7 @@ const TextContainer = styled.div`
     @media (min-width: 1440px) {
       font-size: 16px;
       line-height: 26px;
-      padding-right: 65%;
+      padding-right: 54%;
       text-align: left;
       margin-bottom: 56px;
     }
@@ -96,6 +100,12 @@ const Hero = styled.div`
 
   @media (min-width: 768px) and (max-width: 1439px) {
     background-image: url('/assets/about/tablet/image-quality.jpg');
+  }
+
+  @media (min-width: 1440px) {
+    background-image: url('/assets/about/desktop/image-quality.jpg');
+    grid-row: 1 / 2;
+    transform: translateY(-20%);
   }
 `
 

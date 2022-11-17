@@ -24,12 +24,12 @@ const Hero = styled.section`
   }
 
   @media (min-width: 1440px) {
-    height: 600px;
-    background-image: url('/assets/home/desktop/image-hero-coffeepress.jpg');
+    height: 450px;
+    background-image: url('/assets/about/desktop/image-hero-whitecup.jpg');
     align-items: flex-start;
+    padding-top: 137px;
     padding-left: 58px;
     margin-bottom: 136px;
-    padding-top: 117px;
   }
 
   & h1 {
@@ -47,11 +47,8 @@ const Hero = styled.section`
     }
 
     @media (min-width: 1440px) {
-      font-size: 72px;
-      line-height: 72px;
-      padding-right: 55%;
-      text-align: left;
-      margin-bottom: 32px;
+      font-size: 40px;
+      line-height: 48px;
     }
   }
 
@@ -74,7 +71,6 @@ const Hero = styled.section`
       line-height: 26px;
       padding-right: 65%;
       text-align: left;
-      margin-bottom: 56px;
     }
   }
 `

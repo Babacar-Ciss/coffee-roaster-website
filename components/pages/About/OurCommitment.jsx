@@ -9,6 +9,12 @@ const OurCommitmentStyle = styled.section`
     flex-direction: row;
     margin-bottom: 256px;
   }
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    margin-bottom: 208px;
+    margin-left: 85px;
+  }
 `
 
 const OurCommitmentHero = styled.div`
@@ -26,6 +32,13 @@ const OurCommitmentHero = styled.div`
     flex-basis: 41%;
     margin-right: 69px;
   }
+
+  @media (min-width: 1440px) {
+    background-image: url('/assets/about/desktop/image-commitment.jpg');
+    height: 520px;
+    flex-basis: 35%;
+    margin-right: 125px;
+  }
 `
 
 const CommitSection = styled.div`
@@ -37,6 +50,11 @@ const CommitSection = styled.div`
     flex-basis: 49%;
   }
 
+  @media (min-width: 1440px) {
+    flex-basis: 50%;
+    margin-top: 90px;
+  }
+
   h2 {
     color: var(--dark-grey-blue);
     font-weight: 900;
@@ -45,6 +63,10 @@ const CommitSection = styled.div`
     margin-bottom: 30px;
 
     @media (min-width: 768px) and (max-width: 1439px) {
+      align-self: flex-start;
+    }
+
+    @media (min-width: 1440px) {
       align-self: flex-start;
     }
   }
@@ -59,6 +81,11 @@ const CommitSection = styled.div`
 
     @media (min-width: 768px) and (max-width: 1439px) {
       text-align: left;
+    }
+
+    @media (min-width: 1440px) {
+      text-align: left;
+      padding-right: 94px;
     }
   }
 `
