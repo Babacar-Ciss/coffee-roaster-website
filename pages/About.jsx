@@ -12,7 +12,7 @@ const AboutStyle = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding-top: 43px;
+    padding-top: 59px;
   }
 `
 

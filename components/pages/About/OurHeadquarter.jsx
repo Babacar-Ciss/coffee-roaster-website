@@ -40,6 +40,13 @@ const OurHeadquarterStyled = styled.section`
     padding-right: 70px;
     margin-bottom: 144px;
   }
+
+  @media (min-width: 1440px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 40%;
+    margin-bottom: 144px;
+  }
 `
 const Title = styled.h2`
   color: var(--grey);
@@ -47,6 +54,15 @@ const Title = styled.h2`
   line-height: 32px;
   flex-basis: 100%;
   margin-bottom: 72px;
+  text-align: center;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    text-align: left;
+  }
+
+  @media (min-width: 1440px) {
+    text-align: left;
+  }
 `
 
 const OurHeadquarter = () => {
