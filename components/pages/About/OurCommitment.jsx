@@ -3,15 +3,29 @@ import styled from 'styled-components'
 const OurCommitmentStyle = styled.section`
   display: flex;
   flex-direction: column;
-
   margin-bottom: 198px;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    flex-direction: row;
+    margin-bottom: 256px;
+  }
 `
 
-const OurCommitmentHero = styled.img`
+const OurCommitmentHero = styled.div`
   width: 100%;
   height: 400px;
   border-radius: 10px;
   margin-bottom: 48px;
+  background-image: url('/assets/about/mobile/image-commitment.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    background-image: url('/assets/about/tablet/image-commitment.jpg');
+    height: 470px;
+    flex-basis: 41%;
+    margin-right: 69px;
+  }
 `
 
 const CommitSection = styled.div`
@@ -19,12 +33,20 @@ const CommitSection = styled.div`
   flex-direction: column;
   align-items: center;
 
+  @media (min-width: 768px) and (max-width: 1439px) {
+    flex-basis: 49%;
+  }
+
   h2 {
     color: var(--dark-grey-blue);
     font-weight: 900;
     font-size: 32px;
     line-height: 48px;
     margin-bottom: 30px;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      align-self: flex-start;
+    }
   }
 
   p {
@@ -34,16 +56,17 @@ const CommitSection = styled.div`
     text-align: center;
     color: var(--dark-grey-blue);
     opacity: 0.8;
+
+    @media (min-width: 768px) and (max-width: 1439px) {
+      text-align: left;
+    }
   }
 `
 
 const OurCommitment = () => {
   return (
     <OurCommitmentStyle>
-      <OurCommitmentHero
-        src="/assets/about/mobile/image-commitment.jpg"
-        alt="image commitmen"
-      />
+      <OurCommitmentHero />
 
       <CommitSection>
         <h2>Our commitment</h2>

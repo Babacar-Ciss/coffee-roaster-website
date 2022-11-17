@@ -10,6 +10,12 @@ const HeadquarterStyle = styled.div`
   img {
     margin-bottom: 48px;
   }
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
 `
 
 const Wrapper = styled.div`
@@ -17,9 +23,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   text-align: center;
   color: var(--dark-grey-blue);
-
   font-size: 16px;
   line-height: 26px;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    text-align: left;
+  }
 
   p {
     font-family: 'Barlow';

@@ -16,8 +16,9 @@ const Hero = styled.section`
   text-align: center;
 
   @media (min-width: 768px) and (max-width: 1439px) {
-    background-image: url('/assets/home/tablet/image-hero-coffeepress.jpg');
+    background-image: url('/assets/about/tablet/image-hero-whitecup.jpg');
     align-items: flex-start;
+    padding-top: 118px;
     padding-left: 58px;
     margin-bottom: 144px;
   }
@@ -40,9 +41,8 @@ const Hero = styled.section`
     margin-bottom: 24px;
 
     @media (min-width: 768px) and (max-width: 1439px) {
-      font-size: 48px;
+      font-size: 32px;
       line-height: 48px;
-      padding-right: 250px;
       text-align: left;
     }
 

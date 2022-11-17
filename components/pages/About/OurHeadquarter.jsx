@@ -30,11 +30,29 @@ const hearquartersItems = [
 
 const OurHeadquarterStyled = styled.section`
   margin-bottom: 120px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 70px;
+    margin-bottom: 144px;
+  }
+`
+const Title = styled.h2`
+  color: var(--grey);
+  font-size: 24px;
+  line-height: 32px;
+  flex-basis: 100%;
+  margin-bottom: 72px;
 `
 
 const OurHeadquarter = () => {
   return (
     <OurHeadquarterStyled>
+      <Title>Our headquarters</Title>
       {hearquartersItems.map((item, index) => (
         <Headquarter
           key={index}

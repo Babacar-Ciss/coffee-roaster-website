@@ -5,6 +5,10 @@ const UncompromissingQualityStyle = styled.section`
   grid-template-columns: 7.5% 85% 7.5%;
   grid-template-rows: repeat(2, 78px) auto;
   margin-bottom: 120px;
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    grid-template-rows: repeat(2, 160px) auto;
+  }
 `
 
 const TextContainer = styled.div`
@@ -23,10 +27,8 @@ const TextContainer = styled.div`
   text-align: center;
 
   @media (min-width: 768px) and (max-width: 1439px) {
-    background-image: url('/assets/home/tablet/image-hero-coffeepress.jpg');
-    align-items: flex-start;
-    padding-left: 58px;
-    margin-bottom: 144px;
+    padding-top: 224px;
+    padding-bottom: 67px;
   }
 
   @media (min-width: 1440px) {
@@ -47,10 +49,8 @@ const TextContainer = styled.div`
     margin-bottom: 24px;
 
     @media (min-width: 768px) and (max-width: 1439px) {
-      font-size: 48px;
+      font-size: 32px;
       line-height: 48px;
-      padding-right: 250px;
-      text-align: left;
     }
 
     @media (min-width: 1440px) {
@@ -70,9 +70,7 @@ const TextContainer = styled.div`
     opacity: 0.8;
 
     @media (min-width: 768px) and (max-width: 1439px) {
-      padding-right: 200px;
-      padding-left: 0;
-      text-align: left;
+      padding-inline: 52px;
     }
 
     @media (min-width: 1440px) {
@@ -85,20 +83,26 @@ const TextContainer = styled.div`
   }
 `
 
-const Hero = styled.img`
+const Hero = styled.div`
   z-index: 2;
+  background-image: url('/assets/about/mobile/image-quality.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   grid-column: 2 / 3;
   grid-row: 1 / 3;
   width: 100%;
-  height: 156px;
   border-radius: 10px;
   transform: translateY(-50%);
+
+  @media (min-width: 768px) and (max-width: 1439px) {
+    background-image: url('/assets/about/tablet/image-quality.jpg');
+  }
 `
 
 const UncompromissingQuality = () => {
   return (
     <UncompromissingQualityStyle>
-      <Hero src="/assets/about/mobile/image-quality.jpg" alt="Image Quality" />
+      <Hero />
       <TextContainer>
         <h2> Uncompromising quality</h2>
         <p>
