@@ -97,6 +97,9 @@ const Header = () => {
   const ToggleHamburgerClicked = useStore(
     (state) => state.ToggleHamburgerClicked,
   )
+  const isHamburgerClicked = useStore((state) => state.isHamburgerClicked)
+
+  console.log(isHamburgerClicked)
 
   return (
     <HeaderStyle>
@@ -114,14 +117,26 @@ const Header = () => {
           height="26"
         />
       </Link>
-      <Image
-        onClick={ToggleHamburgerClicked}
-        style={{ cursor: 'pointer' }}
-        src="/assets/shared/mobile/icon-hamburger.svg"
-        alt="roasted coffee hamburger menu"
-        width="16"
-        height="15"
-      />
+
+      {isHamburgerClicked ? (
+        <Image
+          onClick={() => ToggleHamburgerClicked()}
+          style={{ cursor: 'pointer' }}
+          src="/assets/shared/mobile/icon-close.svg"
+          alt="roasted coffee hamburger menu"
+          width="16"
+          height="15"
+        />
+      ) : (
+        <Image
+          onClick={() => ToggleHamburgerClicked()}
+          style={{ cursor: 'pointer' }}
+          src="/assets/shared/mobile/icon-hamburger.svg"
+          alt="roasted coffee hamburger menu"
+          width="16"
+          height="15"
+        />
+      )}
       <LinksContainer>
         <LinksMenu />
       </LinksContainer>
