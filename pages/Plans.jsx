@@ -9,7 +9,11 @@ const PlanStyle = styled.div`
 const Plan = () => {
   return (
     <PlanStyle>
-      <Card />
+      <div style={{ display: 'flex' }}>
+        <Card />
+        {/* <Card />
+        <Card /> */}
+      </div>
     </PlanStyle>
   )
 }
