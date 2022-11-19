@@ -7,6 +7,10 @@ const CardStyle = styled.div`
   padding: 24px 25px;
   margin-bottom: 16px;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @media (min-width: 768px) {
     padding: 32px 57px 84px 25px;
     margin-right: 10px;
