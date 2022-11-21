@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import CreateYourPlanCTA from '../../utils/CreateYourPlanCTA'
 import HowItWorks from '../Home/HowItWorks'
 
 const HowItWorksItems = [
@@ -23,7 +22,16 @@ const HowItWorksItems = [
   },
 ]
 
-const HowItWorksContainerStyle = styled.div`
+const HowItWorkContainerPlanStyle = styled.div`
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  border-radius: 10px;
+  padding-top: 80px;
+  padding-bottom: 79px;
+  padding-inline: 25px;
+  background-color: var(--bg-color-footer);
+  margin-bottom: 120px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,6 +42,9 @@ const HowItWorksContainerStyle = styled.div`
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
+    width: calc(100% + 78px);
+    margin-left: -39px;
+    padding-left: 40px;
   }
 
   @media (min-width: 1440px) {
@@ -41,44 +52,20 @@ const HowItWorksContainerStyle = styled.div`
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: flex-start;
-  }
-
-  &:last-child {
-    padding-bottom: 79px;
-
-    @media (min-width: 1440px) {
-      padding-bottom: 200px;
-    }
-  }
-
-  & h2:first-child {
-    font-size: 24px;
-    line-height: 32px;
-    color: #83888f;
-    margin-bottom: 80px;
-
-    @media (min-width: 768px) {
-      flex-basis: 100%;
-      margin-bottom: 40px;
-    }
-
-    @media (min-width: 1440px) {
-      flex-basis: 100%;
-      margin-bottom: 40px;
-    }
+    width: 100%;
+    margin-left: 0;
+    padding-left: 88px;
   }
 `
 
-const HowItWorksContainer = () => {
+const HowItWorkContainerPlan = () => {
   return (
-    <HowItWorksContainerStyle>
-      <h2>How it works</h2>
+    <HowItWorkContainerPlanStyle>
       {HowItWorksItems.map((item, index) => (
-        <HowItWorks {...item} key={index} index={index} />
+        <HowItWorks {...item} key={index} index={index} type="plan" />
       ))}
-      <CreateYourPlanCTA />
-    </HowItWorksContainerStyle>
+    </HowItWorkContainerPlanStyle>
   )
 }
 
-export default HowItWorksContainer
+export default HowItWorkContainerPlan

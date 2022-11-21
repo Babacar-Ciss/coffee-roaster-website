@@ -7,7 +7,7 @@ const HowItWorksStyle = styled.div`
   justify-content: center;
   margin-bottom: 56px;
 
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) {
     position: relative;
     margin-bottom: 47px;
     align-items: flex-start;
@@ -32,35 +32,37 @@ const Number = styled.p`
   line-height: 72px;
   margin-bottom: 24px;
 
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) {
     margin-bottom: 42px;
   }
 `
 
 const Description = styled.h2`
+  color: ${(props) =>
+    props.type === 'plan' ? 'var(--light-cream)' : 'var(--dark-grey-blue)'};
   font-size: 28px;
   line-height: 32px;
-  color: var(--dark-grey-blue);
   margin-bottom: 24px;
 
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) {
     margin-bottom: 39px;
-    padding-right: 20px;
+    padding-right: ${(props) => (props.type === 'plan' ? '10%' : '30%')};
   }
 
   @media (min-width: 1440px) {
-    padding-right: 30%;
+    padding-right: ${(props) => (props.type === 'plan' ? '50%' : '20%')};
   }
 `
 
 const Details = styled.p`
+  color: ${(props) =>
+    props.type === 'plan' ? 'var(--light-cream)' : 'var(--dark-grey-blue)'};
   font-family: 'Barlow';
   font-size: 15px;
   line-height: 25px;
   text-align: center;
-  color: var(--dark-grey-blue);
 
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) {
     text-align: left;
     padding-right: 15px;
   }
@@ -72,9 +74,10 @@ const Details = styled.p`
 `
 
 const CirclePattern = styled.span`
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) {
     z-index: 2;
-    background-color: var(--light-cream);
+    background-color: ${(props) =>
+      props.type === 'plan' ? 'transparent' : 'var(--light-cream)'};
     width: 31px;
     height: 31px;
     border-radius: 50%;
@@ -84,7 +87,8 @@ const CirclePattern = styled.span`
 
   @media (min-width: 1440px) {
     z-index: 2;
-    background-color: var(--light-cream);
+    background-color: ${(props) =>
+      props.type === 'plan' ? 'transparent' : 'var(--light-cream)'};
     width: 31px;
     height: 31px;
     border-radius: 50%;
@@ -94,15 +98,15 @@ const CirclePattern = styled.span`
 `
 
 const LinePattern = styled.span`
-  @media (min-width: 768px) and (max-width: 1439px) {
+  @media (min-width: 768px) {
     display: ${(props) => (props.index !== 2 ? 'block' : 'none')};
     z-index: 1;
     position: absolute;
     top: 13px;
-    left: 0;
+    left: 14px;
     border: 2px solid var(--pale-orange);
     width: 100%;
-    height: 2px;
+    height: 0.5px;
   }
 
   @media (min-width: 1440px) {
@@ -110,21 +114,21 @@ const LinePattern = styled.span`
     z-index: 1;
     position: absolute;
     top: 13px;
-    left: 0;
+    left: 14px;
     border: 2px solid var(--pale-orange);
     width: 100%;
     height: 2px;
   }
 `
 
-const HowItWorks = ({ number, description, details, index }) => {
+const HowItWorks = ({ number, description, details, index, type }) => {
   return (
     <HowItWorksStyle>
       <LinePattern index={index} />
-      <CirclePattern />
+      <CirclePattern type={type} />
       <Number>{number}</Number>
-      <Description>{description}</Description>
-      <Details>{details}</Details>
+      <Description type={type}>{description}</Description>
+      <Details type={type}>{details}</Details>
     </HowItWorksStyle>
   )
 }
