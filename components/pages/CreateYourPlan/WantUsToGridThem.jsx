@@ -13,7 +13,7 @@ const WantUsToGridThemDatas = {
       title: 'Filter',
       description:
         'For drip or pour-over coffee methods such as V60 or Aeropress',
-      value: 'Filter',
+      value: 'FilterGrind',
     },
     {
       title: 'Cafetiére',

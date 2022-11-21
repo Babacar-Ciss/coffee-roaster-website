@@ -26,7 +26,7 @@ const CreateYourPlanCTAStyle = styled.div`
 const CreateYourPlanCTA = () => {
   return (
     <CreateYourPlanCTAStyle>
-      <Link href="/create your plan">Create your plan</Link>
+      <Link href="/Plans">Create your plan</Link>
     </CreateYourPlanCTAStyle>
   )
 }

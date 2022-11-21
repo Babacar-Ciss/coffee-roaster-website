@@ -7,19 +7,19 @@ const HowDoYouDrinkDatas = {
     {
       title: 'Capsule',
       description: 'Compatible with Nespresso systems and similar brewers',
-      value: 'capsule',
+      value: 'Capsules',
     },
     {
       title: 'Filter',
       description:
         'For pour over or drip methods like Aeropress, Chemex, and V60',
-      value: 'filter',
+      value: 'Filter',
     },
     {
       title: 'Expresso',
       description:
         'Dense and finely ground beans for an intense, flavorful experience',
-      value: 'expresso',
+      value: 'Expresso',
     },
   ],
 }

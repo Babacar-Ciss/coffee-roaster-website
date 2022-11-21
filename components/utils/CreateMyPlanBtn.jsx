@@ -1,10 +1,12 @@
 import styled from 'styled-components'
+import useStore from '../../store'
 
 const CreateMyPlanBtnStyle = styled.button`
   width: 217px;
   height: 56px;
   display: block;
-  background-color: var(--dark-cyan);
+  background-color: ${(props) =>
+    props.allFullFill ? 'var(--dark-cyan)' : 'var(--btn-diseabled)'};
   border-radius: 6px;
   padding: 16px 31px;
   text-decoration: none;
@@ -19,8 +21,11 @@ const CreateMyPlanBtnStyle = styled.button`
   margin: 0 auto;
 
   &:hover {
-    background-color: var(--btn-hover);
+    background-color: ${(props) =>
+      props.allFullFill ? 'var(--btn-hover)' : 'var(--btn-diseabled)'};
+
     transition: all 0.3s;
+    cursor: ${(props) => (props.allFullFill ? 'pointer' : 'not-allowed')};
   }
 
   @media (min-width: 1440px) {
@@ -30,7 +35,17 @@ const CreateMyPlanBtnStyle = styled.button`
 `
 
 const CreateMyPlanBtn = () => {
-  return <CreateMyPlanBtnStyle>Create my plan!</CreateMyPlanBtnStyle>
+  const allFullFill = useStore((state) => state.allFullFill)
+
+  return (
+    <CreateMyPlanBtnStyle
+      allFullFill={allFullFill}
+      disabled={!allFullFill}
+      // onClick={() => console.log(allFullFill)}
+    >
+      Create my plan!
+    </CreateMyPlanBtnStyle>
+  )
 }
 
 export default CreateMyPlanBtn

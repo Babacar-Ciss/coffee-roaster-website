@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import useStore from '../../../store'
+import shallow from 'zustand/shallow'
 
 const CardStyle = styled.div`
   width: 100%;
@@ -81,12 +83,46 @@ const Card = ({
   cardSelected,
   selectedCardHandler,
 }) => {
+  const [
+    SetHowDoYouDrinkYourCoffeeState,
+    SetWhatTypeOfCoffeeState,
+    SetHowMuchWouldYouLikeState,
+    SetWantUsToGridThemState,
+    SetHowOftenShouldWeDeliverState,
+    SetAllFullFill,
+  ] = useStore(
+    (state) => [
+      state.SetHowDoYouDrinkYourCoffeeState,
+      state.SetWhatTypeOfCoffeeState,
+      state.SetHowMuchWouldYouLikeState,
+      state.SetWantUsToGridThemState,
+      state.SetHowOftenShouldWeDeliverState,
+      state.SetAllFullFill,
+    ],
+    shallow,
+  )
+
+  // prettier-ignore
+  const SetStateChoiceHandler = (value) => {
+    if ( value === 'Capsules' ||  value === 'Filter' ||  value === 'Expresso') { SetHowDoYouDrinkYourCoffeeState(value) } 
+
+    else if ( value === 'Single Origin' || value === 'Decaf' || value === 'Blended') { SetWhatTypeOfCoffeeState(value) } 
+    
+    else if ( value === '250g' || value === '500g' || value === '1000g') { SetHowMuchWouldYouLikeState(value) } 
+    
+    else if ( value === 'Wholebean' || value === 'FilterGrind' || value === 'Cafetiére') { SetWantUsToGridThemState(value) }
+
+    else if ( value === 'Every week' || value === 'Every 2 weeks' || value === 'Every month') { SetHowOftenShouldWeDeliverState(value) }
+  }
+
   return (
     <CardStyle
       value={value}
       selected={indexSelected === cardSelected}
-      onClick={(e) => {
-        selectedCardHandler(indexSelected), console.log(value)
+      onClick={() => {
+        selectedCardHandler(indexSelected)
+        SetStateChoiceHandler(value)
+        SetAllFullFill()
       }}
     >
       <Title>{title}</Title>

@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import useStore from '../../../store'
+import shallow from 'zustand/shallow'
 
 const SingleNavigationStyle = styled.li`
   width: 255px;
@@ -23,7 +25,7 @@ const SingleNavigationStyle = styled.li`
   }
 
   h4 {
-    color: var(--grey);
+    color: red;
     margin-right: 29px;
   }
 
@@ -33,9 +35,44 @@ const SingleNavigationStyle = styled.li`
 `
 
 const SingleNavigation = ({ number, title }) => {
+  const [
+    HowDoYouDrinkYourCoffeeState,
+    WhatTypeOfCoffeeState,
+    HowMuchWouldYouLikeState,
+    WantUsToGridThemState,
+    HowOftenShouldWeDeliverState,
+  ] = useStore(
+    (state) => [
+      state.HowDoYouDrinkYourCoffeeState,
+      state.WhatTypeOfCoffeeState,
+      state.HowMuchWouldYouLikeState,
+      state.WantUsToGridThemState,
+      state.HowOftenShouldWeDeliverState,
+    ],
+    shallow,
+  )
+
+  const ColorHightLight = (number) => {
+    if (number === '01' && HowDoYouDrinkYourCoffeeState) {
+      return { color: 'var(--dark-cyan)' }
+    } else if (number === '02' && WhatTypeOfCoffeeState) {
+      return { color: 'var(--dark-cyan)' }
+    } else if (number === '03' && HowMuchWouldYouLikeState) {
+      return { color: 'var(--dark-cyan)' }
+    } else if (number === '04' && WantUsToGridThemState) {
+      return { color: 'var(--dark-cyan)' }
+    } else if (number === '05' && HowOftenShouldWeDeliverState) {
+      return { color: 'var(--dark-cyan)' }
+    } else {
+      return { color: 'var(--grey)' }
+    }
+  }
+
+  console.log(HowDoYouDrinkYourCoffeeState)
+
   return (
     <SingleNavigationStyle>
-      <h4>{number}</h4>
+      <h4 style={ColorHightLight(number)}>{number}</h4>
       <p>{title}</p>
     </SingleNavigationStyle>
   )
