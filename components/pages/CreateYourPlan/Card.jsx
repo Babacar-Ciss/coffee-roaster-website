@@ -2,13 +2,32 @@ import styled from 'styled-components'
 
 const CardStyle = styled.div`
   width: 100%;
-  background-color: var(--dark-cyan);
+  background-color: ${(props) =>
+    props.selected ? 'var(--dark-cyan)' : 'var(--bg-card)'};
   border-radius: 10px;
   padding: 24px 25px;
   margin-bottom: 16px;
+  color: ${(props) =>
+    props.selected ? 'var(--light-cream)' : 'var(--dark-grey-blue)'};
+  color: ;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${(props) =>
+      props.selected ? 'var(--dark-cyan)' : 'var(--pale-orange)'};
+    transition: all 0.5s;
+  }
 
   &:last-child {
     margin-bottom: 0;
+
+    @media (min-width: 768px) {
+      margin-right: 0;
+    }
+
+    @media (min-width: 1440px) {
+      margin-right: 0;
+    }
   }
 
   @media (min-width: 768px) {
@@ -24,7 +43,7 @@ const CardStyle = styled.div`
 `
 
 const Title = styled.h2`
-  color: var(--light-cream);
+  color: inherit;
   font-weight: 900;
   font-size: 24px;
   line-height: 32px;
@@ -40,11 +59,10 @@ const Title = styled.h2`
 `
 
 const Description = styled.p`
-  /* color: var(--dark-grey-blue); */
+  color: inherit;
   font-family: 'Barlow';
   font-size: 16px;
   line-height: 26px;
-  color: var(--light-cream);
 
   @media (min-width: 768px) {
     margin-bottom: 24px;
@@ -55,13 +73,24 @@ const Description = styled.p`
   }
 `
 
-const Card = () => {
+const Card = ({
+  title,
+  description,
+  value,
+  indexSelected,
+  cardSelected,
+  selectedCardHandler,
+}) => {
   return (
-    <CardStyle>
-      <Title>Filter</Title>
-      <Description>
-        For pour over or drip methods like Aeropress, Chemex, and V60
-      </Description>
+    <CardStyle
+      value={value}
+      selected={indexSelected === cardSelected}
+      onClick={(e) => {
+        selectedCardHandler(indexSelected), console.log(value)
+      }}
+    >
+      <Title>{title}</Title>
+      <Description>{description}</Description>
     </CardStyle>
   )
 }

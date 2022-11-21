@@ -12,7 +12,7 @@ const LinksMenu = () => {
       <Link onClick={() => closeMenu()} href="/About">
         About Us
       </Link>
-      <Link onClick={() => closeMenu()} href="/Plan">
+      <Link onClick={() => closeMenu()} href="/Plans">
         Create Your Plan
       </Link>
     </>

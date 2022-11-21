@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
         --grey : #83888F;
         --bg-color-footer : #2C343E;
         --bg-card : #F4F1EB;
+        --btn-hover : #66D2CF;
     }
     
     * {
