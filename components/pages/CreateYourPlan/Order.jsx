@@ -33,12 +33,11 @@ const Order = ({ type }) => {
     ],
     shallow,
   )
-  console.log(HowDoYouDrinkYourCoffeeState)
 
   // prettier-ignore
   return (
     <OrderStyle type={type}>
-      “I drink my coffee as
+      “I drink my coffee  {HowDoYouDrinkYourCoffeeState === "Capsules" ? "using" : "as"}
       <span> { HowDoYouDrinkYourCoffeeState ? HowDoYouDrinkYourCoffeeState : BLANK_SPACE} </span>
       , with a
       <span> {WhatTypeOfCoffeeState ? WhatTypeOfCoffeeState : BLANK_SPACE} </span>

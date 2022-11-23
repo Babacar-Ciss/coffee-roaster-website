@@ -38,7 +38,7 @@ const SideNavigation = () => {
   return (
     <SideNavigationStyle>
       {NavigationItem.map((item, index) => (
-        <SingleNavigation {...item} key={index} />
+        <SingleNavigation {...item} key={index} id={index + 1} />
       ))}
     </SideNavigationStyle>
   )

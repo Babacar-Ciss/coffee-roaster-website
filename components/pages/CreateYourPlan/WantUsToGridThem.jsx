@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import CardContainer from './CardContainer'
+import useStore from '../../../store'
 
 const WantUsToGridThemDatas = {
   name: 'Want us to grind them?',
@@ -26,11 +27,20 @@ const WantUsToGridThemDatas = {
 
 const { name, datas } = WantUsToGridThemDatas
 
-const WantUsToGridThemStyle = styled.div``
+const WantUsToGridThemStyle = styled.div`
+  opacity: ${(props) => (props.isCapsuleChecked ? '0.5' : '1')};
+  pointer-events: ${(props) => (props.isCapsuleChecked ? 'none' : 'auto')};
+`
 
 const WantUsToGridThem = () => {
+  const HowDoYouDrinkYourCoffeeState = useStore(
+    (state) => state.HowDoYouDrinkYourCoffeeState,
+  )
+
   return (
-    <WantUsToGridThemStyle>
+    <WantUsToGridThemStyle
+      isCapsuleChecked={HowDoYouDrinkYourCoffeeState === 'Capsules'}
+    >
       <CardContainer name={name} datas={datas} />
     </WantUsToGridThemStyle>
   )

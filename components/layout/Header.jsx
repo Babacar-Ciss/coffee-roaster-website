@@ -99,8 +99,6 @@ const Header = () => {
   )
   const isHamburgerClicked = useStore((state) => state.isHamburgerClicked)
 
-  console.log(isHamburgerClicked)
-
   return (
     <HeaderStyle>
       <Link href="/">

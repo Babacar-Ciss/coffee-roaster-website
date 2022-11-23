@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import useStore from '../../store'
+import CalculateTotalToPayPerMounth from '../../CalculateTotalToPayPerMounth'
 
 const CreateMyPlanBtnStyle = styled.button`
   width: 217px;
@@ -36,12 +37,15 @@ const CreateMyPlanBtnStyle = styled.button`
 
 const CreateMyPlanBtn = () => {
   const allFullFill = useStore((state) => state.allFullFill)
+  const OpenOrderSummaryModal = useStore((state) => state.OpenOrderSummaryModal)
 
   return (
     <CreateMyPlanBtnStyle
       allFullFill={allFullFill}
       disabled={!allFullFill}
-      // onClick={() => console.log(allFullFill)}
+      onClick={() => {
+        OpenOrderSummaryModal()
+      }}
     >
       Create my plan!
     </CreateMyPlanBtnStyle>

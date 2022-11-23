@@ -12,10 +12,20 @@ const SingleNavigationStyle = styled.li`
   padding-bottom: 24px;
   border-bottom: 1px solid rgba(131, 136, 143, 0.25);
   cursor: pointer;
-  opacity: 0.4;
+  opacity: ${(props) =>
+    props.isCapsuleChecked && props.number === '04' ? '0.2' : '0.4'};
+
+  pointer-events: ${(props) =>
+    props.isCapsuleChecked && props.number === '04' ? 'none' : 'auto'};
+
+  cursor: ${(props) =>
+    props.isCapsuleChecked && props.number === '04'
+      ? 'not-allowed'
+      : 'pointer'};
 
   &:hover {
-    opacity: 0.6;
+    opacity: ${(props) =>
+      props.isCapsuleChecked && props.number === '04' ? '0.2' : '0.6'};
     transition: all 0.3s;
   }
 
@@ -34,7 +44,7 @@ const SingleNavigationStyle = styled.li`
   }
 `
 
-const SingleNavigation = ({ number, title }) => {
+const SingleNavigation = ({ number, title, id }) => {
   const [
     HowDoYouDrinkYourCoffeeState,
     WhatTypeOfCoffeeState,
@@ -68,10 +78,12 @@ const SingleNavigation = ({ number, title }) => {
     }
   }
 
-  console.log(HowDoYouDrinkYourCoffeeState)
-
   return (
-    <SingleNavigationStyle>
+    <SingleNavigationStyle
+      isCapsuleChecked={HowDoYouDrinkYourCoffeeState === 'Capsules'}
+      onClick={() => console.log(id)}
+      number={number}
+    >
       <h4 style={ColorHightLight(number)}>{number}</h4>
       <p>{title}</p>
     </SingleNavigationStyle>

@@ -90,6 +90,8 @@ const Card = ({
     SetWantUsToGridThemState,
     SetHowOftenShouldWeDeliverState,
     SetAllFullFill,
+    ReinitializeWantUsToGridThemState,
+    HowDoYouDrinkYourCoffeeState,
   ] = useStore(
     (state) => [
       state.SetHowDoYouDrinkYourCoffeeState,
@@ -98,6 +100,8 @@ const Card = ({
       state.SetWantUsToGridThemState,
       state.SetHowOftenShouldWeDeliverState,
       state.SetAllFullFill,
+      state.ReinitializeWantUsToGridThemState,
+      state.HowDoYouDrinkYourCoffeeState,
     ],
     shallow,
   )
@@ -123,6 +127,10 @@ const Card = ({
         selectedCardHandler(indexSelected)
         SetStateChoiceHandler(value)
         SetAllFullFill()
+        if (HowDoYouDrinkYourCoffeeState === 'Capsules') {
+          ReinitializeWantUsToGridThemState()
+          SetAllFullFill()
+        }
       }}
     >
       <Title>{title}</Title>

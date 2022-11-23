@@ -1,10 +1,13 @@
 import styled from 'styled-components'
 import Card from './Card'
 import { useState } from 'react'
+import useStore from '../../../store'
 
 const CardContainerStyle = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
 `
 
 const Wrapper = styled.div`
@@ -57,11 +60,15 @@ const Arrow = styled.img`
   margin-bottom: 32px;
   cursor: pointer;
   rotate: ${(props) => (props.arrowClicked ? '180deg' : null)};
+  margin-top: -10px;
 `
 
 const CardContainer = ({ name, datas }) => {
   const [isChoiceClose, setIsChoiceClose] = useState(false)
   const [selected, setSelected] = useState(null)
+  const HowDoYouDrinkYourCoffeeState = useStore(
+    (state) => state.HowDoYouDrinkYourCoffeeState,
+  )
 
   const selectedCardHandler = (index) => {
     if (selected === index) {
@@ -72,11 +79,10 @@ const CardContainer = ({ name, datas }) => {
 
   return (
     <CardContainerStyle>
-      <WrapperName>
+      <WrapperName onClick={() => setIsChoiceClose(!isChoiceClose)}>
         <ContainerName>{name}</ContainerName>
         <Arrow
           arrowClicked={isChoiceClose}
-          onClick={() => setIsChoiceClose(!isChoiceClose)}
           src="/assets/plan/desktop/icon-arrow.svg"
           alt="Arrow"
         />

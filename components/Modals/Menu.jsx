@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import useStore from '../store'
-import LinksMenu from './LinksMenu'
+import useStore from '../../store'
+import LinksMenu from '../LinksMenu'
 
 const MenuStyle = styled.div`
   z-index: 1000;
