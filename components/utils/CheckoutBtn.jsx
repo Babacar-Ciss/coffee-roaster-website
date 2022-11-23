@@ -52,7 +52,7 @@ const ContainerTabletandDesktop = styled.div`
     height: 56px;
     background-color: var(--dark-cyan);
     border-radius: 6px;
-    padding: 16px 64px;
+    padding: 16px 62px;
     text-decoration: none;
     font-family: 'Fraunces';
     font-weight: 900;
